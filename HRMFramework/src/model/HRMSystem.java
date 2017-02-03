@@ -27,9 +27,15 @@ public class HRMSystem {
 	 */
 	public int addManager(String name, int salary) throws IllegalArgumentException {
 		// 1) call method employee exist
+		if (employeeExists(name)) {
+			throw new IllegalArgumentException("Already exists");
+		}
 		// 2) if (true) throw IllegalArgumentException
-		// 3) if false create Manager and add Manager;
+		// 3) create Manager and add Manager;
+		Manager manager = new Manager(name, salary);
+		employees.add(manager);
 		// 4) return employee size;
+		return employees.size();
 	}
 
 	/**
