@@ -158,6 +158,11 @@ public class HRMSystem {
 	 * or the employee is not a manager
 	 */
 	public int numberOfEmployeesManagedByManager(String managerName) throws IllegalArgumentException {
+		if (!isManager(managerName)) {
+			throw new  IllegalArgumentException();
+		}
+		Manager mngr = (Manager) getEmployee(managerName);
+		return mngr.getUniqueNum();
 	}
 
 	/**
