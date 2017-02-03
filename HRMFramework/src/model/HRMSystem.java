@@ -63,15 +63,15 @@ public class HRMSystem {
 	public void assignManager(String managerName, String employeeName) throws IllegalArgumentException {
 
 		if (!isManager(managerName)) {
-			throw new IllegalArgumentException("Not a manager");
+			throw new IllegalArgumentException("No such manager");
 		}
 		Manager mngr = (Manager) getEmployee(managerName);
 
-		Employee emp2 = getEmployee(employeeName);
-		if (emp2 == null) {
-			throw new IllegalArgumentException("Employee not exist");
+		Employee emp = getEmployee(employeeName);
+		if (emp == null) {
+			throw new IllegalArgumentException("Employee does not exist");
 		}
-		mngr.addEmployeeToList(emp2);
+		mngr.addEmployeeToList(emp);
 
 	}
 	
@@ -85,7 +85,12 @@ public class HRMSystem {
 	 * @throws IllegalArgumentException if an employee with the given name already exists
 	 */
 	public int addEmployee(String name, int salary) throws IllegalArgumentException {
-
+		if (employeeExists(name)) {
+			throw new IllegalArgumentException(name + "is already exist");
+		}
+		Employee employee = new Employee(name, salary);
+		employees.add(employee);
+		return employees.size();
 	}
 	
 	/**
