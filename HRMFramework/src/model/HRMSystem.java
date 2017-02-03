@@ -187,7 +187,7 @@ public class HRMSystem {
 		} catch (FileNotFoundException fe) {
 			return -1;
 		}
-		int i = 0;
+		int count = 0;
 		while (in.hasNextLine()) {
 
 			String line = in.nextLine();
@@ -198,12 +198,14 @@ public class HRMSystem {
 				continue;
 			}
 			try {
-				processLine(line);
+				employees.add(processLine(line));
+				count++;
+
 			} catch (LineException le) {
-				System.out.println("ERROR: " + le.getMessage());
+				System.out.println("ERROR" + le.getMessage());
 			}
 		}
-		return i;
+		return count;
 	}
 	
 	/**
