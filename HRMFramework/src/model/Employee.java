@@ -9,11 +9,10 @@ public class Employee {
 
     private String name;
     private int salary;
-    private ArrayList<Competence> competences;
+    ArrayList<Competence> competences = new ArrayList<>();
 
-    public Employee(String name, int salary, ArrayList<Competence> competences) {
+    public Employee(String name, int salary) {
         this.name = name;
         this.salary = salary;
-        this.competences = competences;
     }
 }
