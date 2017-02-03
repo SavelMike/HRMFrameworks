@@ -8,4 +8,9 @@ import java.util.ArrayList;
 public class Manager extends Employee {
 
     private ArrayList<Employee> employees;
+
+    public Manager(String name, int salary, ArrayList<Competence> competences, ArrayList<Employee> employees) {
+        super(name, salary, competences);
+        this.employees = employees;
+    }
 }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class HRMSystem {
 
-	ArrayList<Employee> employees;
+	ArrayList<Employee> employees = new ArrayList<>();
 	
 	/**
 	 * Add a manager to the system. The name must be unique. If not, an
@@ -28,13 +28,11 @@ public class HRMSystem {
 	public int addManager(String name, int salary) throws IllegalArgumentException {
 		// 1) call method employee exist
 		if (employeeExists(name)) {
-			throw new IllegalArgumentException("Already exists");
+			throw new IllegalArgumentException("Name already exists");
 		}
-		// 2) if (true) throw IllegalArgumentException
-		// 3) create Manager and add Manager;
+
 		Manager manager = new Manager(name, salary);
 		employees.add(manager);
-		// 4) return employee size;
 		return employees.size();
 	}
 
