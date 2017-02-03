@@ -1,7 +1,9 @@
 package model;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * To keep track of the employees within a company, we are going to develop a HRM application.
@@ -176,8 +178,20 @@ public class HRMSystem {
 	 * @return the number of persons that have been read (and added to the system) successfully,
 	 * or -1 if the file could not be read.
 	 */
-	public int readEmployeesFromFile(String filename) {
-	}
+	public int readEmployeesFromFile(String filename) throws FileNotFoundException {
+		File f = new File(filename);
+		Scanner in = new Scanner(f);
+		while (in.hasNextLine()) {
+
+			String line = in.nextLine();
+			if (line.isEmpty()) {
+				continue;
+			}
+			if ((line.charAt(0) == '#')) {
+				continue;
+			}
+			
+		}
 	
 	/**
 	 * Helper method to read a line from the file.
@@ -188,21 +202,11 @@ public class HRMSystem {
 	 * @see HRMSystem#readEmployeesFromFile(String)
 	 */
 	private Employee processLine(String line) throws LineException {
+
+	}
 	}
 
-	/**
-	 * Voegt een competentie toe aan de medewerker met het gegeven medewerkerNummer.
-	 * 
-	 * Als de medewerker niet bestaat, doet de methode niets en levert false op. Als
-	 * het meegegeven niveau lager is dan 0, dan wordt 0 als waarde gebruikt. Als hij hoger
-	 * is dan 2, dan wordt 2 gebruikt.
-	 * 
-	 * @param medewerkerNaam			De naam van de medewerker waaraan de competentie
-	 * 									moet worden toegevoegd.
-	 * @param competentieBeschrijving	De beschrijving van de competentie.	
-	 * @param competentieNiveau			Het niveau van de competentie (0, 1 of 2)
-	 * @throws IllegalArgumentException Als de medewerkerNaam niet in het systeem voorkomt.
-	 */
+
 
 	/**
 	 * Adds a competence to an employee with the given name. If the employee does not exist,
