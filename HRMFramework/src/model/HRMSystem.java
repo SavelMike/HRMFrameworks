@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class HRMSystem {
 
-	ArrayList<Emp>
+	ArrayList<Employee> employees;
 	
 	/**
 	 * Add a manager to the system. The name must be unique. If not, an
@@ -50,7 +50,6 @@ public class HRMSystem {
 	public void assignManager(String managerName, String employeeName) throws IllegalArgumentException {
 		//	1. find manager
 		//	2. find employee
-		//  3.
 	}
 	
 	/**
