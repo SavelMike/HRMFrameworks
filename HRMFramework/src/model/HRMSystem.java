@@ -44,14 +44,11 @@ public class HRMSystem {
 	 * @throws IllegalArgumentException if no such employee exists
 	 */
 	private boolean isManager(String name) throws IllegalArgumentException{
-		Employee employee = getEmployee(name);
-		if (employee == null) {
-			throw new IllegalArgumentException("err");
+		Employee emp = getEmployee(name);
+		if (emp == null) {
+			throw new IllegalArgumentException(name + " is not a manager");
 		}
-		if (employee instanceof Manager) {
-			return true;
-		}
-		return false;
+		return emp instanceof Manager;
 	}
 	
 	/**
