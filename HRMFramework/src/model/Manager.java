@@ -17,7 +17,7 @@ public class Manager extends Employee {
         employees.add(employee);
     }
 
-    public int getUniqueNum() {
+    public int getNumOfEmployees() {
         return employees.size();
     }
 }

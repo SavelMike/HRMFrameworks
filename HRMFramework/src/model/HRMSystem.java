@@ -117,7 +117,7 @@ public class HRMSystem {
 	 */
 	private Employee getEmployee(String name) {
 		for (int i = 0; i < employees.size(); i++) {
-			employees.get(i).getName().equals(name) {
+			if (employees.get(i).getName().equals(name)) {
 				return employees.get(i);
 			}
 		}
@@ -162,7 +162,7 @@ public class HRMSystem {
 			throw new  IllegalArgumentException();
 		}
 		Manager mngr = (Manager) getEmployee(managerName);
-		return mngr.getUniqueNum();
+		return mngr.getNumOfEmployees();
 	}
 
 	/**
