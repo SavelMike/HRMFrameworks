@@ -130,6 +130,7 @@ public class HRMSystem {
 	 * @return the total number of employees
 	 */
 	public int numberOfEmployees() {
+		return employees.size();
 	}
 
 	/**
@@ -139,6 +140,13 @@ public class HRMSystem {
 	 * @see HRMSystem#numberOfEmployees()
 	 */
 	public int numberOfManagers() {
+		int count = 0;
+		for (int i = 0; i < employees.size(); i++) {
+			if (employees.get(i) instanceof Manager) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	/**
