@@ -6,5 +6,6 @@ package model;
 public class Competence {
 
     private int competenceLevel;
+    private String competenceName;
 
 }
