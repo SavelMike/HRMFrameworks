@@ -1,5 +1,6 @@
 package model;
 
+import javax.sound.sampled.LineUnavailableException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -196,9 +197,11 @@ public class HRMSystem {
 			if ((line.charAt(0) == '#')) {
 				continue;
 			}
-
-			employees.add(processLine(line));
-			i++;
+			try {
+				processLine(line);
+			} catch (LineException le) {
+				System.out.println("ERROR: " + le.getMessage());
+			}
 		}
 		return i;
 	}
