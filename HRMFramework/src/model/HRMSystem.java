@@ -61,8 +61,18 @@ public class HRMSystem {
 	 * not a manager
 	 */
 	public void assignManager(String managerName, String employeeName) throws IllegalArgumentException {
-		//	1. find manager
-		//	2. find employee
+
+		Manager emp = (Manager)getEmployee(managerName);
+		if (!isManager(managerName)) {
+			throw new IllegalArgumentException("Not a manager");
+		}
+		Employee emp2 = getEmployee(employeeName);
+		if (emp2 == null) {
+			throw new IllegalArgumentException("Employee already exist");
+		}
+
+		emp.addEmployeeToList(emp2);
+
 	}
 	
 	/**
@@ -75,6 +85,7 @@ public class HRMSystem {
 	 * @throws IllegalArgumentException if an employee with the given name already exists
 	 */
 	public int addEmployee(String name, int salary) throws IllegalArgumentException {
+		
 	}
 	
 	/**
