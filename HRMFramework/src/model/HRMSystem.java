@@ -116,6 +116,12 @@ public class HRMSystem {
 	 * @return the Employee object, or null if there is no employee with the given name.
 	 */
 	private Employee getEmployee(String name) {
+		for (int i = 0; i < employees.size(); i++) {
+			employees.get(i).getName().equals(name) {
+				return employees.get(i);
+			}
+		}
+		return null;
 	}
 
 	/**
