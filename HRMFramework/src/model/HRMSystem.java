@@ -26,7 +26,7 @@ public class HRMSystem {
 	 * @throws IllegalArgumentException if an employee with the given name already exists
 	 */
 	public int addManager(String name, int salary) throws IllegalArgumentException {
-		// 1) call method employee exist
+
 		if (employeeExists(name)) {
 			throw new IllegalArgumentException("Name already exists");
 		}
@@ -44,6 +44,14 @@ public class HRMSystem {
 	 * @throws IllegalArgumentException if no such employee exists
 	 */
 	private boolean isManager(String name) throws IllegalArgumentException{
+		Employee employee = getEmployee(name);
+		if (employee == null) {
+			throw new IllegalArgumentException("err");
+		}
+		if (employee instanceof Manager) {
+			return true;
+		}
+		return false;
 	}
 	
 	/**
