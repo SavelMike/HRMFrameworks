@@ -178,9 +178,15 @@ public class HRMSystem {
 	 * @return the number of persons that have been read (and added to the system) successfully,
 	 * or -1 if the file could not be read.
 	 */
-	public int readEmployeesFromFile(String filename) throws FileNotFoundException {
+	public int readEmployeesFromFile(String filename) {
 		File f = new File(filename);
-		Scanner in = new Scanner(f);
+		Scanner in;
+		try {
+			in = new Scanner(f);
+		} catch (FileNotFoundException fe) {
+			return -1;
+		}
+		int i = 0;
 		while (in.hasNextLine()) {
 
 			String line = in.nextLine();
@@ -190,8 +196,12 @@ public class HRMSystem {
 			if ((line.charAt(0) == '#')) {
 				continue;
 			}
-			
+
+			employees.add(processLine(line));
+			i++;
 		}
+		return i;
+	}
 	
 	/**
 	 * Helper method to read a line from the file.
@@ -203,7 +213,6 @@ public class HRMSystem {
 	 */
 	private Employee processLine(String line) throws LineException {
 
-	}
 	}
 
 
