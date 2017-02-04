@@ -25,9 +25,14 @@ public class Employee {
     }
 
     public String myToString(int index) {
+        String rc = this.name + "(" + index + ")";
         if (competences.size() == 0) {
-            System.out.print("has no competence");
+            rc += "has not competence";
+        } else {
+            for (int i = 0; i < competences.size(); i++) {
+                rc += toString(competences.get(i));
+            }
         }
-        return name + " (" + index + ") has competences: " + competences.toString();
+        return rc;
     }
 }

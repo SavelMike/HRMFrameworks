@@ -21,7 +21,7 @@ public class Competence {
         return competenceName;
     }
 
-    public String toString() {
+    public String toString(Competence c) {
         return competenceName + " (" + competenceLevel + ")";
     }
 }
