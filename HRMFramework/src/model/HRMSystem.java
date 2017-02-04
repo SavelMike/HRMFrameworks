@@ -277,14 +277,14 @@ public class HRMSystem {
 			throw  new IllegalArgumentException("No such employee");
 		}
 
-		Competence competence = new Competence(competenceLevel, competenceName);
-
 		if (competenceLevel < 0) {
 			competenceLevel = 0;
 		}
 		if (competenceLevel > 2) {
 			competenceLevel = 2;
 		}
+		Competence competence = new Competence(competenceLevel, competenceName);
+		
 		emp.addCompitanceToList(competence);
 	}
 

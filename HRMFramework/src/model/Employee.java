@@ -27,7 +27,7 @@ public class Employee {
     public String competenceToString(int index) {
         String rc = name + " (" + index + ")";
         if (competences.size() == 0) {
-            rc += "has not competence";
+            rc += " has not competence";
         } else {
             for (int i = 0; i < competences.size(); i++) {
                 if (i != 0) {
