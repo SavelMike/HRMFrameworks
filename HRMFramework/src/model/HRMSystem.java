@@ -202,7 +202,7 @@ public class HRMSystem {
 				count++;
 
 			} catch (LineException le) {
-				System.out.println("ERROR" + le.getMessage());
+				System.out.println("ERROR: " + le.getMessage());
 			}
 		}
 		return count;
@@ -217,6 +217,27 @@ public class HRMSystem {
 	 * @see HRMSystem#readEmployeesFromFile(String)
 	 */
 	private Employee processLine(String line) throws LineException {
+		// Use scanner to read line
+		// Use scanner
+		Scanner sc = new Scanner(line);
+		if (!sc.hasNext()) {
+			throw new LineException();
+		}
+
+		String name = sc.next();
+		if (!sc.hasNextInt()) {
+			throw new  LineException();
+		}
+		int salary = sc.nextInt();
+		if (!sc.hasNext()) {
+			Employee employee = new Employee(name, salary);
+			return employee;
+		}
+		String name2 = sc.next();
+		if (!name2.equals("manager")) {
+			throw new LineException();
+		}
+		
 
 	}
 
