@@ -310,10 +310,11 @@ public class HRMSystem {
 		f.close();
 	}
 
-	public String ToString() {
+	public String toString() {
 		String rc = "Summary (" + employees.size() + " employee(s))\n\n";
 		for (int i = 0; i < employees.size(); i++) {
 			rc += employees.get(i).employeeToString(i + 1);
+			rc += "\n";
 		}
 		return rc;
 	}
