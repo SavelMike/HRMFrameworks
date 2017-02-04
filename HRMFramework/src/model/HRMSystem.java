@@ -238,6 +238,15 @@ public class HRMSystem {
 			throw new LineException("Wrong name");
 		}
 
+		Manager manager = new Manager(name, salary);
+		while (sc.hasNext()) {
+			String name3 = sc.next();
+			if (employeeExists(name3)) {
+				manager.addEmployeeToList(getEmployee(name3));
+			}
+			throw new LineException("No such employee");
+		}
+
 	}
 
 
