@@ -217,16 +217,16 @@ public class HRMSystem {
 	 * @see HRMSystem#readEmployeesFromFile(String)
 	 */
 	private Employee processLine(String line) throws LineException {
-		// Use scanner to read line
-		// Use scanner
+
 		Scanner sc = new Scanner(line);
+		sc.useDelimiter(",");
 		if (!sc.hasNext()) {
-			throw new LineException();
+			throw new LineException("No name");
 		}
 
 		String name = sc.next();
 		if (!sc.hasNextInt()) {
-			throw new  LineException();
+			throw new  LineException("Missed salary");
 		}
 		int salary = sc.nextInt();
 		if (!sc.hasNext()) {
@@ -235,9 +235,8 @@ public class HRMSystem {
 		}
 		String name2 = sc.next();
 		if (!name2.equals("manager")) {
-			throw new LineException();
+			throw new LineException("Wrong name");
 		}
-		
 
 	}
 
