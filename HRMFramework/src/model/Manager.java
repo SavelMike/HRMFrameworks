@@ -21,7 +21,9 @@ public class Manager extends Employee {
         return employees.size();
     }
 
-    public String managerToString() {
-
+    public String employeeToString(int index) {
+        String rc = super.employeeToString(index);
+        rc += "manages " + employees.size() + " employees";
+        return rc;
     }
 }

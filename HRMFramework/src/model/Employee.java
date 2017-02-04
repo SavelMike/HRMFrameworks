@@ -25,7 +25,7 @@ public class Employee {
     }
 
     public String competenceToString(int index) {
-        String rc = this.name + " (" + index + ")";
+        String rc = name + " (" + index + ")";
         if (competences.size() == 0) {
             rc += "has not competence";
         } else {
@@ -42,7 +42,7 @@ public class Employee {
     }
 
     public String employeeToString(int index) {
-        String rc = this.name + " (" + index + ")";
+        String rc = name + " (" + index + ")";
         rc += " with salary " + salary;
         return rc;
     }
