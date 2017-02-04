@@ -30,8 +30,10 @@ public class Employee {
             rc += "has not competence";
         } else {
             for (int i = 0; i < competences.size(); i++) {
-                if (i == 0) {
+                if (i != 0) {
                     rc += ", ";
+                } else {
+                    rc += "has competences: ";
                 }
                 rc += (competences.get(i).toString());
             }

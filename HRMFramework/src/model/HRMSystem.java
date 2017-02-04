@@ -301,5 +301,6 @@ public class HRMSystem {
 		for (int i = 0; i < employees.size(); i++) {
 			f.println(employees.get(i).myToString(i));
 		}
+		f.close();
 	}
 }

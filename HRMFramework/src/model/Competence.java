@@ -22,6 +22,6 @@ public class Competence {
     }
 
     public String toString() {
-        return "has competences: " + competenceName + " (" + competenceLevel + ")";
+        return competenceName + " (" + competenceLevel + ")";
     }
 }
