@@ -23,7 +23,7 @@ public class Manager extends Employee {
 
     public String employeeToString(int index) {
         String rc = super.employeeToString(index);
-        rc += "manages " + employees.size() + " employees";
+        rc += " manages " + employees.size() + " employees";
         return rc;
     }
 }

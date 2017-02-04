@@ -299,14 +299,16 @@ public class HRMSystem {
 		PrintWriter f = new PrintWriter(fileName);
 		f.println("### HRM System Summary ###");
 		for (int i = 0; i < employees.size(); i++) {
-			f.println(employees.get(i).competenceToString(i));
+			f.println(employees.get(i).competenceToString(i + 1));
 		}
 		f.close();
 	}
 
-	@Override
 	public String ToString() {
-		String rc =
-
+		String rc = "";
+		for (int i = 0; i < employees.size(); i++) {
+			rc = employees.get(i).employeeToString(i + 1);
+		}
+		return rc;
 	}
 }
