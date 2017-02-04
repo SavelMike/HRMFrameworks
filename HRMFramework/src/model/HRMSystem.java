@@ -297,10 +297,16 @@ public class HRMSystem {
 	 */
 	public void writeReportToFile(String fileName) throws FileNotFoundException {
 		PrintWriter f = new PrintWriter(fileName);
-		f.println("### HRM System Summery ###");
+		f.println("### HRM System Summary ###");
 		for (int i = 0; i < employees.size(); i++) {
-			f.println(employees.get(i).myToString(i));
+			f.println(employees.get(i).competenceToString(i));
 		}
 		f.close();
+	}
+
+	@Override
+	public String ToString() {
+		String rc =
+
 	}
 }

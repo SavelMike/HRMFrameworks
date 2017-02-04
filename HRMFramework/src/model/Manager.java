@@ -20,4 +20,8 @@ public class Manager extends Employee {
     public int getNumOfEmployees() {
         return employees.size();
     }
+
+    public String managerToString() {
+
+    }
 }

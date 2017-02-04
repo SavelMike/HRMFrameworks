@@ -24,8 +24,8 @@ public class Employee {
         competences.add(c);
     }
 
-    public String myToString(int index) {
-        String rc = this.name + "(" + index + ")";
+    public String competenceToString(int index) {
+        String rc = this.name + " (" + index + ")";
         if (competences.size() == 0) {
             rc += "has not competence";
         } else {
@@ -33,11 +33,16 @@ public class Employee {
                 if (i != 0) {
                     rc += ", ";
                 } else {
-                    rc += "has competences: ";
+                    rc += " has competences: ";
                 }
                 rc += (competences.get(i).toString());
             }
         }
         return rc;
+    }
+
+    public String employeeToString() {
+        String rc = this.name;
+        rc += name
     }
 }
