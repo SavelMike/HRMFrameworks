@@ -265,8 +265,21 @@ public class HRMSystem {
 	 */
 	public void addCompetence(String employeeName, String competenceName, int competenceLevel) throws IllegalArgumentException {
 		// 1) find employee
+		Employee emp = getEmployee(employeeName);
+		if (emp == null) {
+			throw  new IllegalArgumentException("No such employee");
+		}
 		// 2) create competence
+		Competence competence = new Competence(competenceLevel, competenceName);
+
 		// 3) employe.complist.add(Competence)
+		if (competenceLevel < 0) {
+			competenceLevel = 0;
+		}
+		if (competenceLevel > 2) {
+			competenceLevel = 2;
+		}
+		emp.addCompitanceToList(competence);
 	}
 
 	/**

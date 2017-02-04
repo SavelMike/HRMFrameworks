@@ -19,4 +19,8 @@ public class Employee {
     public String getName() {
         return name;
     }
+
+    public void addCompitanceToList(Competence c) {
+        competences.add(c);
+    }
 }

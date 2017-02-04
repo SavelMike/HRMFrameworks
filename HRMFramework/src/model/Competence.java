@@ -8,4 +8,8 @@ public class Competence {
     private int competenceLevel;
     private String competenceName;
 
+    public Competence(int competenceLevel, String competenceName) {
+        this.competenceLevel = competenceLevel;
+        this.competenceName = competenceName;
+    }
 }
