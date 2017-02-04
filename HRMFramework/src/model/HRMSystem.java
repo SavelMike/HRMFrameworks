@@ -189,8 +189,9 @@ public class HRMSystem {
 			return -1;
 		}
 		int count = 0;
+		int lines = 1;
 		while (in.hasNextLine()) {
-
+			lines++;
 			String line = in.nextLine();
 			if (line.isEmpty()) {
 				continue;
@@ -203,7 +204,7 @@ public class HRMSystem {
 				count++;
 
 			} catch (LineException le) {
-				System.out.println("ERROR: " + le.getMessage());
+				System.out.println("ERROR on line " + lines + ":" + le.getMessage());
 			}
 		}
 		return count;
@@ -226,8 +227,11 @@ public class HRMSystem {
 		}
 
 		String name = sc.next();
+		if (!sc.hasNext()) {
+			throw new LineException("Salary is missing");
+		}
 		if (!sc.hasNextInt()) {
-			throw new  LineException("Missed salary");
+			throw new  LineException("Must be a number");
 		}
 		int salary = sc.nextInt();
 		if (!sc.hasNext()) {
