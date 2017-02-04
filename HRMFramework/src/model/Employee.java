@@ -41,8 +41,9 @@ public class Employee {
         return rc;
     }
 
-    public String employeeToString() {
-        String rc = this.name;
-        rc += name
+    public String employeeToString(int index) {
+        String rc = this.name + " (" + index + ")";
+        rc += " with salary " + salary;
+        return rc;
     }
 }
