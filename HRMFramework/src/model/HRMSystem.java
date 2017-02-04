@@ -243,10 +243,12 @@ public class HRMSystem {
 			String name3 = sc.next();
 			if (employeeExists(name3)) {
 				manager.addEmployeeToList(getEmployee(name3));
+			} else {
+				throw new LineException("No such employee");
 			}
-			throw new LineException("No such employee");
 		}
 
+		return manager;
 	}
 
 
