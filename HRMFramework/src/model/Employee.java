@@ -24,10 +24,10 @@ public class Employee {
         competences.add(c);
     }
 
-
-    @Override
-    public void myToString() {
-        for (int i = 0; i < )
-        System.out.println(name + " (" + competences + ")" + "manager," + competences
+    public String myToString(int index) {
+        if (competences.size() == 0) {
+            System.out.print("has no competence");
+        }
+        return name + " (" + index + ") has competences: " + competences.toString();
     }
 }

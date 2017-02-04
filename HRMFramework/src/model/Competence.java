@@ -12,4 +12,16 @@ public class Competence {
         this.competenceLevel = competenceLevel;
         this.competenceName = competenceName;
     }
+
+    public int getCompetenceLevel() {
+        return competenceLevel;
+    }
+
+    public String getCompetenceName() {
+        return competenceName;
+    }
+
+    public String toString() {
+        return competenceName + " (" + competenceLevel + ")";
+    }
 }

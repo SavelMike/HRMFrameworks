@@ -299,7 +299,7 @@ public class HRMSystem {
 		PrintWriter f = new PrintWriter(fileName);
 		f.println("### HRM System Summery ###");
 		for (int i = 0; i < employees.size(); i++) {
-			f.println(employees.get(i));
+			f.println(employees.get(i).myToString(i));
 		}
 	}
 }
