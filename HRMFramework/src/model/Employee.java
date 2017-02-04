@@ -23,4 +23,11 @@ public class Employee {
     public void addCompitanceToList(Competence c) {
         competences.add(c);
     }
+
+
+    @Override
+    public void myToString() {
+        for (int i = 0; i < )
+        System.out.println(name + " (" + competences + ")" + "manager," + competences
+    }
 }

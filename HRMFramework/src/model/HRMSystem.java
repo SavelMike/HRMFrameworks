@@ -3,6 +3,7 @@ package model;
 import javax.sound.sampled.LineUnavailableException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -264,15 +265,14 @@ public class HRMSystem {
 	 * @throws IllegalArgumentException if there is no such employee
 	 */
 	public void addCompetence(String employeeName, String competenceName, int competenceLevel) throws IllegalArgumentException {
-		// 1) find employee
+
 		Employee emp = getEmployee(employeeName);
 		if (emp == null) {
 			throw  new IllegalArgumentException("No such employee");
 		}
-		// 2) create competence
+
 		Competence competence = new Competence(competenceLevel, competenceName);
 
-		// 3) employe.complist.add(Competence)
 		if (competenceLevel < 0) {
 			competenceLevel = 0;
 		}
@@ -296,5 +296,10 @@ public class HRMSystem {
 	 * @throws FileNotFoundException if the output file could not be created
 	 */
 	public void writeReportToFile(String fileName) throws FileNotFoundException {
+		PrintWriter f = new PrintWriter(fileName);
+		f.println("### HRM System Summery ###");
+		for (int i = 0; i < employees.size(); i++) {
+			f.println(employees.get(i));
+		}
 	}
 }
